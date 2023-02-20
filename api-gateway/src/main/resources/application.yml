@@ -1,0 +1,53 @@
+server:
+  port: 8080
+---
+spring:
+
+  application:
+    name: API-Gateway
+---
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+        cloud:
+          gateway: trace
+          route:
+            RouteDefinitionLocator : info
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id : product_service
+        uri: lb://Product-Service
+        predicates:
+        - Path=/api/product/**
+
+      - id : order_service
+        uri: lb://Order-Service
+        predicates:
+        - Path=/api/order/**
+
+      - id : inventory_service
+        uri: lb://Inventory-Service
+        predicates:
+        - Path=/api/inventory/**
+
+      - id: eureka_server
+        uri: http://localhost:8761
+        predicates:
+        - Path=/eureka/web
+        filters:
+        - SetPath=/
+
+      - id: load_resource_eureka_server
+        uri: http://localhost:8761
+        predicates:
+          - Path=/eureka/**2

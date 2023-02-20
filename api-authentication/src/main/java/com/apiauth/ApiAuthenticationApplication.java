@@ -1,12 +1,13 @@
-package order.shopping.product;
+package com.apiauth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProductApplication {
+public class ApiAuthenticationApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(ProductApplication.class, args);
+        SpringApplication.run(ApiAuthenticationApplication.class, args);
     }
 
 }

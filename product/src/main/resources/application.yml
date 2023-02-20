@@ -7,7 +7,7 @@ spring:
     name: Product-Service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/spring_ecom_product
+    url: jdbc:mysql://localhost:3306/spring_ecommerce_products
     username: root
     password: RootPass!@
     driver-class-name: com.mysql.cj.jdbc.Driver

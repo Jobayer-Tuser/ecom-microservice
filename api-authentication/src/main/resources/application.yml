@@ -1,13 +1,13 @@
 server:
-  port: 0
+  port: 9093
 ---
 spring:
 
   application:
-    name: Inventory-Service
+    name: Auth-Service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/spring_ecommerce_inventory
+    url: jdbc:mysql://localhost:3306/spring_ecommerce_auth
     username: root
     password: RootPass!@
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -27,3 +27,5 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
 
+Jwt:
+  secretKey: 046465b21d0989c6248bdd34200d0f0db4a5ff4d7c837194af267de36c9b84f4
